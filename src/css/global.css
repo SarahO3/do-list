@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --color-night: #120e0c;
+  --color-dark-brown: #1d1410;
+  --color-brown: #2d1c15;
+
+  --color-ember: #b85c32;
+  --color-flame: #e59a4b;
+  --color-gold: #c79a5b;
+
+  --color-cream: #f4eadb;
+  --color-muted: #b9aa9b;
+
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+
+  background: var(--color-night);
+  color: var(--color-cream);
+
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  --obsidian: #171310;
+  --espresso: #241a15;
+  --burgundy: #4a211f;
+  --ember: #a94a24;
+  --amber: #c68a45;
+  --cream: #f4ebdd;
+  --taupe: #b9a99a;
+
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--cream);
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+#content {
+  min-height: calc(100vh - 10rem);
+} */
