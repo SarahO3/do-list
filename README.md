@@ -197,7 +197,7 @@ You need Node.js and npm installed on your computer.
 Clone the repository and move into the project directory:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/SarahO3/do-list
 
 cd do-list
 ```
