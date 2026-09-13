@@ -1,12 +1,11 @@
 {
-  "name": "ember-and-plate",
+  "name": "do-list",
   "version": "1.0.0",
-  "description": "A romantic fireside restaurant website built with JavaScript and Webpack.",
+  "description": "A minimalistic todo list app built with JavaScript and Webpack.",
   "main": "index.js",
   "scripts": {
   "dev": "webpack serve --open --config webpack.dev.js",
-  "build": "webpack --config webpack.prod.js",
-  "deploy": "git subtree push --prefix dist origin gh-pages"
+  "build": "webpack --config webpack.prod.js"
 },
   "keywords": [],
   "author": "",

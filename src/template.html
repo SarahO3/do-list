@@ -3,9 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ember & Plate</title>
+
+    <title>Do List</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  <div id="app"></div>
+
+    <div id="app">
+
+        <!-- PROJECT SIDEBAR -->
+        <aside id="sidebar">
+
+            <div class="sidebar-header">
+                <h1>Do List</h1>
+            </div>
+
+            <section id="projectsSection">
+
+                <h2>Projects</h2>
+
+                <div id="projectContainer"></div>
+
+                <button id="addProject">
+                    + Add Project
+                </button>
+
+            </section>
+
+            <section id="unassignedSection">
+
+                <h2>Unassigned</h2>
+
+                <button id="showUnassigned">
+                    Unassigned Todos
+                </button>
+
+            </section>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main id="mainContent">
+
+            <header id="mainHeader">
+
+                <h1 id="currentProject"></h1>
+
+                <button id="addTodo">
+                    + Add Todo
+                </button>
+
+            </header>
+
+
+            <!-- TODO LIST -->
+            <section id="todoSection">
+
+                <div id="todoContainer"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- TODO MODAL -->
+    <dialog id="todoModal">
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                Add Todo
+            </h2>
+
+            <button
+                type="button"
+                id="closeModal"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- TODO VIEW -->
+        <div id="todoView" hidden>
+
+            <div class="todo-detail">
+
+                <h3>Title</h3>
+                <p id="viewTitle"></p>
+
+            </div>
+
+            <div class="todo-detail">
+
+                <h3>Description</h3>
+                <p id="viewDescription"></p>
+
+            </div>
+
+            <div class="todo-detail">
+
+                <h3>Due Date</h3>
+                <p id="viewDueDate"></p>
+
+            </div>
+
+            <div class="todo-detail">
+
+                <h3>Priority</h3>
+                <p id="viewPriority"></p>
+
+            </div>
+
+            <div class="todo-detail">
+
+                <h3>Project</h3>
+                <p id="viewProject"></p>
+
+            </div>
+
+            <div class="todo-detail">
+
+                <h3>Status</h3>
+                <p id="viewStatus"></p>
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="editTodo"
+                >
+                    Edit
+                </button>
+
+                <button
+                    type="button"
+                    id="deleteTodo"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TODO FORM -->
+        <form id="todoForm" hidden>
+
+            <div class="form-group">
+
+                <label for="todoTitle">
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    id="todoTitle"
+                    name="title"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="todoDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="todoDescription"
+                    name="description"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="todoDueDate">
+                    Due Date
+                </label>
+
+                <input
+                    type="date"
+                    id="todoDueDate"
+                    name="dueDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="todoPriority">
+                    Priority
+                </label>
+
+                <select
+                    id="todoPriority"
+                    name="priority"
+                    required
+                >
+
+                    <option value="">
+                        Select priority
+                    </option>
+
+                    <option value="low">
+                        Low
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PROJECT SELECTION -->
+            <div class="form-group">
+
+                <label for="todoProject">
+                    Project
+                </label>
+
+                <select
+                    id="todoProject"
+                    name="projectId"
+                >
+
+                    <option value="">
+                        No Project
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelTodo"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    id="saveTodo"
+                >
+                    Save Todo
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- PROJECT MODAL -->
+    <dialog id="projectModal">
+
+        <div class="modal-header">
+
+            <h2 id="projectModalTitle">
+                Add Project
+            </h2>
+
+            <button
+                type="button"
+                id="closeProjectModal"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="projectForm">
+
+            <div class="form-group">
+
+                <label for="projectName">
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    name="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelProject"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    id="saveProject"
+                >
+                    Save Project
+                </button>
+
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- DELETE CONFIRMATION MODAL -->
+<dialog id="confirmModal">
+
+    <div class="modal-header">
+
+        <h2 id="confirmTitle">
+            Confirm Delete
+        </h2>
+
+        <button
+            type="button"
+            id="closeConfirmModal"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="confirmation-content">
+
+        <p id="confirmMessage">
+            Are you sure you want to delete this item?
+        </p>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+        <button
+            type="button"
+            id="cancelDelete"
+        >
+            Cancel
+        </button>
+
+        <button
+            type="button"
+            id="confirmDelete"
+        >
+            Delete
+        </button>
+
+    </div>
+
+</dialog>
 </body>
 </html>

@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #160f14;
+    color: #f7e9ee;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* MAIN APP LAYOUT */
+#app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+#sidebar {
+    width: 260px;
+    padding: 30px 20px;
+    background-color: #21141b;
+    border-right: 1px solid #49303a;
+}
+
+.sidebar-header {
+    margin-bottom: 40px;
+}
+
+.sidebar-header h1 {
+    margin: 0;
+    color: #e8b8c7;
+    font-size: 28px;
+}
+
+#projectsSection h2,
+#unassignedSection h2 {
+    margin-bottom: 15px;
+    color: #bfa8b1;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* PROJECT LIST */
+#projectContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#projectContainer > div {
+    padding: 12px;
+    background-color: #2a1921;
+    border: 1px solid #49303a;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#projectContainer > div:hover {
+    background-color: #35202a;
+    border-color: #c98298;
+}
+
+#projectContainer h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #f7e9ee;
+}
+
+/* SIDEBAR BUTTONS */
+#addProject,
+#showUnassigned {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background-color: transparent;
+    color: #d8a0b2;
+    border: 1px solid #7a2946;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#addProject:hover,
+#showUnassigned:hover {
+    background-color: #7a2946;
+    color: #fff;
+}
+
+/* MAIN CONTENT */
+#mainContent {
+    flex: 1;
+    padding: 40px;
+}
+
+#mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#currentProject {
+    margin: 0;
+    color: #e8b8c7;
+    font-size: 32px;
+}
+
+/* ADD TODO BUTTON */
+#addTodo {
+    padding: 12px 20px;
+    background-color: #7a2946;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#addTodo:hover {
+    background-color: #943556;
+}
+
+/* TODO CARDS */
+#todoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#todoContainer > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background-color: #2a1921;
+    border: 1px solid #49303a;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#todoContainer > div:hover {
+    border-color: #c98298;
+    transform: translateY(-1px);
+}
+
+#todoContainer h2 {
+    flex: 1;
+    margin: 0;
+    color: #f7e9ee;
+    font-size: 18px;
+}
+
+#todoContainer p {
+    margin: 0;
+    color: #bfa8b1;
+    font-size: 14px;
+}
+
+/* TODO CHECKBOX */
+.todo-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #c98298;
+}
+
+/* DIALOG / MODALS */
+dialog {
+    width: 500px;
+    max-width: 90%;
+    padding: 0;
+    background-color: #21141b;
+    color: #f7e9ee;
+    border: 1px solid #49303a;
+    border-radius: 14px;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid #49303a;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #e8b8c7;
+}
+
+#closeModal,
+#closeProjectModal,
+#closeConfirmModal {
+    background: none;
+    border: none;
+    color: #bfa8b1;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#closeModal:hover,
+#closeProjectModal:hover,
+#closeConfirmModal:hover {
+    color: #e8b8c7;
+}
+
+/* FORMS */
+#todoForm,
+#projectForm {
+    padding: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #d8a0b2;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px;
+    background-color: #160f14;
+    color: #f7e9ee;
+    border: 1px solid #49303a;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #c98298;
+}
+
+/* TODO DETAILS */
+#todoView {
+    padding: 25px;
+}
+
+.todo-detail {
+    margin-bottom: 20px;
+}
+
+.todo-detail h3 {
+    margin-bottom: 5px;
+    color: #bfa8b1;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.todo-detail p {
+    margin: 0;
+    color: #f7e9ee;
+}
+
+/* MODAL BUTTONS */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px 25px;
+}
+
+.modal-actions button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #49303a;
+    cursor: pointer;
+}
+
+#cancelTodo,
+#cancelProject,
+#cancelDelete {
+    background-color: transparent;
+    color: #d8a0b2;
+}
+
+#saveTodo,
+#saveProject {
+    background-color: #7a2946;
+    color: #fff;
+    border-color: #7a2946;
+}
+
+#editTodo {
+    background-color: #c98298;
+    color: #160f14;
+    border: none;
+}
+
+#deleteTodo,
+#confirmDelete {
+    background-color: #6b233d;
+    color: #fff;
+    border: none;
+}
+
+.modal-actions button:hover {
+    opacity: 0.85;
+}
+
+/* DELETE CONFIRMATION */
+.confirmation-content {
+    padding: 25px;
+}
+
+.confirmation-content p {
+    margin: 0;
+    color: #d8c3ca;
+}

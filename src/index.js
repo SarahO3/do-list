@@ -1,12 +1,8 @@
-import createAppLayout from "./app/appLayout.js"
+import { initializeApp, selectedProjectId } from "./modules/app.js";
+import { renderProjects, renderTodos } from "./modules/ui.js";
+import "./style.css"
 
 
-//our apps entry poitn where everything is loaded in our main html element
- createAppLayout()
-
-
-
-
-
-
-
+initializeApp();
+renderProjects();
+renderTodos(selectedProjectId);
